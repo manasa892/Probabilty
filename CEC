@@ -213,3 +213,35 @@ print(expected_baskets)
 expected_late =  180 * (1 - 0.98)
 print(expected_late)
 
+11.Variance of the Binomial Distribution
+## Checkpoint 1
+variance_baskets = 20 * 0.85 * (1 - 0.85)
+print(variance_baskets)
+
+## Checkpoint 2
+variance_late = 180 * 0.98 * (1 - 0.98)
+print(variance_late) 
+
+12.Properties of Expectations and Variance
+import scipy.stats as stats
+import numpy as np
+
+## Checkpoint 1
+expected_bonus = 0.08 * 75000
+print(expected_bonus)
+
+
+## Checkpoint 2
+num_goals = stats.poisson.rvs(4, size = 100) 
+
+
+## Checkpoint 3
+print(np.var(num_goals))
+
+## Checkpoint 4
+num_goals_2 = num_goals * 2
+print(np.var(num_goals_2))
+
+
+
+
