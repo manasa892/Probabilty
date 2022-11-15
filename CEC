@@ -123,5 +123,93 @@ print(temp_prob_1)
 temp_prob_2 = 1 - stats.norm.cdf(24, 20, 3)
 print(temp_prob_2)
 
+6.Calculating Probabilities of Exact Values Using the Probability Mass Functions
+import scipy.stats as stats
 
+## Checkpoint 1
+# calculate prob_15
+prob_15 = stats.poisson.pmf(15, 15)
+
+# print prob_15
+print(prob_15)
+
+
+## Checkpoint
+# calculate prob_7_to_9
+prob_7_to_9 = stats.poisson.pmf(7, 15) + stats.poisson.pmf(8, 15) + stats.poisson.pmf(9, 15)
+
+# print prob_7_to_9
+print(prob_7_to_9)
+
+7.Calculating Probabilities of a Range using the Cumulative Density Function
+import scipy.stats as stats
+
+## Checkpoint 1
+# calculate prob_more_than_20
+prob_more_than_20 = 1 - stats.poisson.cdf(20, 15)
+
+# print prob_more_than_20
+print(prob_more_than_20)
+
+## Checkpoint 
+# calculate prob_17_to_21
+prob_17_to_21 = stats.poisson.cdf(21, 15) - stats.poisson.cdf(16, 15)
+
+# print prob_17_to_21
+print(prob_17_to_21)
+
+8.Expectation of the Poisson Distribution
+import scipy.stats as stats
+import codecademylib3
+
+from histogram_function import histogram_function
+
+## Checkpoint 1
+# lambda = 15, 1000 random draws 
+rand_vars = stats.poisson.rvs(15, size = 1000)
+
+## Checkpoint 2
+# print the mean of rand_vars
+print(rand_vars.mean())
+
+## Checkpoint 3
+histogram_function(rand_vars)
+
+9.Spread of the Poisson Distribution
+import scipy.stats as stats
+import numpy as np
+
+## For checkpoints 1 and 2
+# 5000 draws, lambda = 7
+rand_vars_7 = stats.poisson.rvs(7, size = 5000)
+
+## Checkpoint 1
+# print variance of rand_vars_7
+print(np.var(rand_vars_7))
+
+## Checkpoint 2
+# print minimum and maximum of rand_vars_7
+print(min(rand_vars_7), max(rand_vars_7))
+
+## For checkpoints 3 and 4
+# 5000 draws, lambda = 17
+rand_vars_17 = stats.poisson.rvs(17, size = 5000)
+
+## Checkpoint 3
+# print variance of rand_vars_17
+print(np.var(rand_vars_17))
+
+## Checkpoint 4
+# print minimum and maximum of rand_vars_17
+print(min(rand_vars_17), max(rand_vars_17))
+
+
+10.Expected Value of the Binomial Distribution
+## Checkpoint 1
+expected_baskets = 20 * 0.85
+print(expected_baskets)
+
+## Checkpoint 2
+expected_late =  180 * (1 - 0.98)
+print(expected_late)
 
